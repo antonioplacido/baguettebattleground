@@ -4,7 +4,7 @@ import App from "./App";
 import { createStore } from "redux";
 import rootReducer from "./reducers";
 import { Provider } from "react-redux";
-import { auth0Provider } from "@auth0/auth0-react";
+import { Auth0Provider } from "@auth0/auth0-react";
 
 const domain = process.env.REACT_APP_AUTH0_DOMAIN;
 const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
@@ -15,14 +15,14 @@ const store = createStore(
 );
 
 ReactDOM.render(
-  <auth0Provider
-    domain={domain}
-    clientId={clientId}
-    redirectUri={window.location.origin}
-  >
-    <Provider store={store}>
+  <Provider store={store}>
+    <Auth0Provider
+      domain={domain}
+      clientId={clientId}
+      redirectUri={window.location.origin}
+    >
       <App />
-    </Provider>
-  </auth0Provider>,
+    </Auth0Provider>
+  </Provider>,
   document.getElementById("root")
 );

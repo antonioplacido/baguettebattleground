@@ -1,5 +1,7 @@
+import LoginButton from "./components/LoginButton";
+
 function App() {
-  return <div>thanks mass</div>;
+  return <LoginButton />;
 }
 
 export default App;
