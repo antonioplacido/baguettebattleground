@@ -6,6 +6,11 @@ import rootReducer from "./reducers";
 import { Provider } from "react-redux";
 import { Auth0Provider } from "@auth0/auth0-react";
 
+const domain = process.env.AUTH_DOMAIN;
+const clientId = process.env.UTH_CLIENT_ID;
+
+console.log(domain);
+
 const store = createStore(
   rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
